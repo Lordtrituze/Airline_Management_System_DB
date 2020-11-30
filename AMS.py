@@ -268,7 +268,8 @@ def bookingMenu(menuOption):
         booking_no = input("Enter the Booking Number \n :")
         booking_date = input("Enter the date of Booking \n :")
         seat_no = input("Enter the Seat Number \n :")
-        booking_repository.create(id=None, passenger_id= passenger_id, flight_id= flight_id, booking_type= booking_type, flight_class= flight_class, booking_no= booking_no, booking_date= booking_date, seat_no= seat_no, created_at=None)
+        booking = Booking(id=None, passenger_id= passenger_id, flight_id= flight_id, booking_type= booking_type, flight_class= flight_class, booking_no= booking_no, booking_date= booking_date, seat_no= seat_no, created_at=None)
+        booking_repository.create(booking)
         request()
         subMenu(4)
     elif menuOption == 2:
@@ -302,7 +303,8 @@ def bookingMenu(menuOption):
         booking_no = input("Enter the Booking Number \n :")
         booking_date = input("Enter the date of Booking \n :")
         seat_no = input("Enter the Seat Number \n :")
-        booking_repository.update(passenger_id= passenger_id, flight_id= flight_id, booking_type= booking_type, flight_class= flight_class, booking_no= booking_no, booking_date= booking_date, seat_no= seat_no)
+        booking = Booking(id=None, passenger_id= passenger_id, flight_id= flight_id, booking_type= booking_type, flight_class= flight_class, booking_no= booking_no, booking_date= booking_date, seat_no= seat_no, created_at=None)
+        booking_repository.update(id=id, booking=booking)
         request()
         subMenu(4)
     elif menuOption == 4:
